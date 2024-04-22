@@ -1,4 +1,31 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
+import { cn } from '../../helper/actionClassName.helper';
+
+export const BtnPrimaryBrand = memo((props) => (
+  <button
+    type={props.type || 'button'}
+    disabled={props.disabled}
+    onClick={props.handle}
+    className={cn(
+      'text-base font-medium py-3 px-[52px] rounded transition duration-200 ease-in-out',
+      props.className,
+      {
+        'hover:bg-primary-700 hover:text-white hover:border-primary-700':
+          props.isHoverDarken,
+        'hover:opacity-80': !props.isHoverDarken,
+      },
+      {
+        'text-primary-500 bg-white border-2 border-primary-500':
+          props.isOutline,
+        'text-white bg-primary-500': !props.isOutline,
+      },
+    )}
+    {...props.other}
+  >
+    {props.children}
+  </button>
+));
 
 const Button = (props) => {
   const className = [props.className];
