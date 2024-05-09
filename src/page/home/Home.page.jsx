@@ -1,15 +1,27 @@
+import { useState, useEffect } from 'react';
 import Wrap from '../../component/layout/Wrap';
-import { BtnNeutral, BtnPrimaryBrand } from '../../component/general/Button';
+import Hero from './component/Hero';
+import { contentHome } from '../../service/api/cms/futsalCenter.cms';
+import { isSuccess } from '../../helper/condition.helper';
 
 const HomePage = () => {
+  const [data, setData] = useState({});
+
+  const _getData = () => {
+    contentHome().then((resData) => {
+      if (isSuccess(resData)) {
+        setData(resData);
+      }
+    });
+  };
+
+  useEffect(() => {
+    _getData();
+  }, []);
+
   return (
     <Wrap htmlTitle="Home">
-      <div className="container my-[200px]">
-        <div className="flex flex-col gap-8 w-1/6">
-          <BtnPrimaryBrand className="btn-shadow">Test</BtnPrimaryBrand>
-          <BtnNeutral isOutline>Test</BtnNeutral>
-        </div>
-      </div>
+      <Hero data={data.hero || []} />
     </Wrap>
   );
 };

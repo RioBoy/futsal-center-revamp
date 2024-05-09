@@ -49,6 +49,16 @@ export default {
           900: '#545454',
         },
       },
+      fontSize: {
+        '5xl': ['2.625rem', { lineHeight: '3.938rem' }],
+      },
+      screens: {
+        xsm: { max: '376px' },
+        sm: { max: '426px' },
+      },
+      opacity: {
+        35: '0.35',
+      },
     },
   },
   plugins: [],
