@@ -17,5 +17,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/prop-types': 0,
+    'react/display-name': 'off',
+    'react/no-children-prop': 'off',
   },
-}
+};

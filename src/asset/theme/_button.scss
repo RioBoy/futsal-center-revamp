@@ -1,0 +1,35 @@
+.btn {
+  @apply text-base font-medium text-center rounded-md transition duration-200 ease-in-out py-3 px-[52px];
+
+  /* Button Primary Start */
+  &.btn-primary {
+    @apply text-white bg-primary-500 hover:bg-primary-700;
+  }
+
+  &.btn-primary-outline {
+    @apply text-primary-500 bg-white border-2 border-primary-500;
+
+    &:hover {
+      @apply text-white bg-primary-700 border-primary-700;
+    }
+  }
+  /* Button Primary End */
+
+  /* Button Secondary Start */
+  &.btn-neutral {
+    @apply text-gray-500 bg-neutral-200 shadow-md hover:opacity-80;
+  }
+
+  &.btn-neutral-outline {
+    @apply text-gray-500 bg-white border-2 border-neutral-200 shadow-md;
+
+    &:hover {
+      @apply text-gray-500 bg-neutral-200 border-neutral-200;
+    }
+  }
+  /* Button Secondary End */
+}
+
+.btn-shadow {
+  box-shadow: 0px 8px 15px rgba(131, 75, 255, 0.3);
+}
