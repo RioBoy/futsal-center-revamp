@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '../general/Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);
@@ -15,17 +15,16 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between relative">
           <div className="px-0">
-            <Button
-              type="link"
-              href="/"
+            <Link
+              to="/"
               className="font-medium text-xl md:text-[26px] text-primary block py-5"
             >
               Futsalcenter
-            </Button>
+            </Link>
           </div>
 
           <div className="flex items-center px-0">
-            <Button
+            {/* <Button
               type="button"
               onClick={() => setToggleNav(!toggleNav)}
               className={[
@@ -36,7 +35,7 @@ const Header = () => {
               <span className="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
               <span className="hamburger-line transition duration-300 ease-in-out"></span>
               <span className="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-            </Button>
+            </Button> */}
 
             <nav
               id="nav-menu"
@@ -47,23 +46,21 @@ const Header = () => {
             >
               <ul className="block lg:flex">
                 <li className="group">
-                  <Button
-                    type="link"
-                    href="/"
+                  <Link
+                    to="/"
                     className="text-base text-primary py-2 mx-4 flex group-hover:text-purple-500 group-hover:underline"
                   >
                     Beranda
-                  </Button>
+                  </Link>
                 </li>
 
                 <li className="group">
-                  <Button
-                    type="link"
-                    href="/about"
+                  <Link
+                    to="/about"
                     className="text-base text-primary py-2 mx-4 flex group-hover:text-purple-500 group-hover:underline"
                   >
                     Tentang Kami
-                  </Button>
+                  </Link>
                 </li>
               </ul>
             </nav>

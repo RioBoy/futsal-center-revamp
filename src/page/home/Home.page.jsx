@@ -1,13 +1,14 @@
 import Wrap from '../../component/layout/Wrap';
-import { BtnPrimaryBrand } from '../../component/general/Button';
+import { BtnNeutral, BtnPrimaryBrand } from '../../component/general/Button';
 
 const HomePage = () => {
   return (
     <Wrap htmlTitle="Home">
       <div className="container my-[200px]">
-        <BtnPrimaryBrand isHoverDarken className="btn-shadow">
-          Test
-        </BtnPrimaryBrand>
+        <div className="flex flex-col gap-8 w-1/6">
+          <BtnPrimaryBrand className="btn-shadow">Test</BtnPrimaryBrand>
+          <BtnNeutral isOutline>Test</BtnNeutral>
+        </div>
       </div>
     </Wrap>
   );
